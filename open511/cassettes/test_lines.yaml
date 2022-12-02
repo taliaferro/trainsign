@@ -1,0 +1,67 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://api.511.org/transit/lines?operator_id=SF&api_key=TEST&format=json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAJ1Z227jNhD9FcHPMWrdkrhvlExbjClSJSknRtuHZNcFAuwmC2+Coij6ZX3oJ/UX
+        VpZsmPJwgZl9CQLC0jmc65nR///+9+vfE/Fx8vPk+mZyNVGPn3fd/wU3ismo4mJVOdudu/3jy9cv
+        r/u3+vXj4QdP71+70+b96dPzh3I46p+3z/tn+fyyM7s/Tkf168vz2+t+12G87d93VxP9Zbd/7E6G
+        39jl5J+rI4W5OVOwTEWFaZWODGvEAsehf8GYQ39E4LA8U6iZWXMX/fY+myXX0X3FzIaHjPF597Z/
+        vaSyBEyWNCKJZ4vWOW5wJkgAbkLDTb04KLUpuHM45BQGQEoMgDj3YpBtN4LfR1WrusvbqNFCuYg/
+        NIZbZEj2rxsz6o8oXvCzwmyZQhojgcZIiMbIbs/Qv7Td5Zlh0yRzVWSd4RxJpH/LmEh/RCByfeZR
+        sUNFmDasqw/WttjSACsDjcENYKC0EXzFcPjQF0RX3HkpUbWmrLBV4A4g39GQ1+4MrVaSW7HgU1cJ
+        E6qIQQr9G8Yc+iMCCXXmcNcuGPr2CiArYvbFvuO3weobSr4YJl9MrIIzr/w6Xa6dVsgyOINlcEYD
+        z7Mz+JJLNHT/3Bi6P6LEW9En9RFcnELupz7kogKb8cfXXITdcEhg40ZsiBxciIMjc8hSXxFYrUSJ
+        rLwprLwpEdvrh60SWk1psZjBBpgRG2B664myFWdmSxFkw9MX2XBLlGTp3FckAitH5hB5TgO+LR5G
+        esRW2vCooImQ4SVjIsMZxQReEDJbFa3ZTuPbXgogrQGDMSUGoxeLy5ZQlGBNouHKcRHoVNCmm03Q
+        ZUCGyoAkl4HEU2PxvLM823DVcmRDgiIsIYqw3DP/Qq8a5oIqJOSAgAeILriJMz8RTKfDmZHbqAjr
+        kJAEi2FvGs4o+chC+ciI+cgC+ciI+ahGMdmLInxEqlBEKnJE5t6EyB9KLq3QyCExh1NiThwTYw99
+        qaXVdTcVlGKJ7Y4xpBATKVx7g8lpQEIOJIGJhDiS5F49kGzNo5qbkiOzIYf1IKfWA+/ypnWSKSw2
+        vHtOvHvp9WMmxVIbJdhxKo1KVkje/Q2F4ofHp0+7Px//uuRUAkoljVF9ZqRLzlR0WB1gx5QaoNc0
+        9KY6wzf6nks5rbYL/kOm6N81ZtMfUULDG5e7SX1Nikw4K+fEYbmpgTV63fxj5oDOaYjekZFtoH6w
+        DS8Fk0gNMbziQkMMhwQmXsuwVeucDMmHYIjCfkGdpCbjMQoLDJcHxN1BnHnzQy1s16QUZYIYnr9o
+        FBlxgvBq9Uk2IMUClArU64PbY+8duDYR25ubGi3XSGA4N8XEuSnxtYGQskbbOwmsr4mqIPGEcteR
+        mG07jSgsvkEmUC8n1K2xZ3nbKotd1ibQ9gnR9pkXcLr/dHFjK9auKtUp5C2ORgZjLyPGnm+A05cc
+        HDg0AdUCHvamwz5cfErKvQxyyIgkUq/k9FsTHHIKC05KrDiJFwALsRGWLbhB2j6Bjk+ojp8FPB/p
+        e2SnncPt6Zy4PZXTAe2UBPcyOjZ9ZLM/Pn/R7Y+nFB3mdb5hY0JpfDnsezmx7c299XlqFtPT3oLg
+        DrhJnxM36Qq643sfEUKzctAZiu6M2EvI7Jq4v4lhWsZUITAJzExIdAhOLAn+ClsfPqdyZD1K4Now
+        Ia4NU+/mBZOFRt46hddOqR9xPCnAOxmwxkJDBZBS1+beeH6wtxUOCw7n8xQ5n//+DdnO4D7PIQAA
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1311'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Dec 2022 22:12:13 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      RateLimit-Limit:
+      - '60'
+      RateLimit-Remaining:
+      - '56'
+      Server:
+      - Microsoft-IIS/8.5
+    status:
+      code: 200
+      message: OK
+version: 1

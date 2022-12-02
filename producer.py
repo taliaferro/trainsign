@@ -7,10 +7,8 @@ async def visit_data_stream(
 ):
     while True:
         data = client.stop_monitoring(agency, stop_code=stop_code)
-        stop_states = data["ServiceDelivery"]["StopMonitoringDelivery"][
-            "MonitoredStopVisit"
-        ]
-        for state in stop_states:
+        visits = data.ServiceDelivery.StopMonitoringDelivery.MonitoredStopVisit
+        async for state in visits:
             yield state
 
         if meter:
@@ -19,4 +17,6 @@ async def visit_data_stream(
                 now.year, now.month, now.day, now.hour + 1, tzinfo=now.tzinfo
             )
             time_till_reset = (reset_time - now).seconds
-            await asyncio.sleep(time_till_reset / (client.limit_remaining + rate_limit_overhead))
+            await asyncio.sleep(
+                time_till_reset / (client.limit_remaining + rate_limit_overhead)
+            )

@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://api.511.org/transit/operators?api_key=TEST&format=json
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2377'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Dec 2022 22:12:13 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      RateLimit-Limit:
+      - '60'
+      RateLimit-Remaining:
+      - '57'
+      Server:
+      - Microsoft-IIS/8.5
+    status:
+      code: 200
+      message: OK
+version: 1

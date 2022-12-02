@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://api.511.org/transit/holidays?operator_id=SF&api_key=TEST&format=json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAJ2YwWrCQBRF/2XWBvJu1Gp2xeIP6K50kdYsAjYBDYKIX9ZFP6m/0BmNSPVNvXkw
+        CLm88Wzezb368/V9cLOmbsu6dfnBLcrNrvooZ8W6rFfFJkjVyuVuMXcDN980ny9FW/pnpEAiksiT
+        15fNVc2SVJJ07I4D97wrqnXxXq2rdu8Rq6qtmnrr8teD25WbrX/wV4p677+hY+R/vlbFLdM0P50k
+        nfjPG/plCFk+ml6HjgMCOYkgJwxyYkFCdCSEQPohCxIRJBgkTMgsgswYZGZCDiPIIYMcmpCjCHLE
+        IEcmZGRjwWwsbBs7jSCnDHJqQWapjsxSAumHeiPh32AaMugPkachC1L1ZdAZpMGX/pa6sUFnkIaN
+        RcgFHTlmkGMTUk2SoDNIQ5L4W6ovg84gDb70t1RfBp1BGnwZjo4UZmPFtLGiJknQGaQhSfxRkyTo
+        DNKQJP5EfCmML8XkS4n4UhhfismXEtlYYTZWTBsLNUmCTiBhShK94YFpeDA1PEQaHpiGB1PDQ6Th
+        gWl4MDU8fyuysWA2FqaNRSRJwCQJTEmiNzwwDQ+mhodIwwPT8GBqeIg0PDAND/0b3vkH6r1JOv1/
+        5GXIgrw3SaczyL4mOd+6D69OZ5B9w+t86z68Op1B9g2vy58NOvLBq+AydIt8Ox5/AX+o7AMWEQAA
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '513'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Dec 2022 22:12:32 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      RateLimit-Limit:
+      - '60'
+      RateLimit-Remaining:
+      - '59'
+      Server:
+      - Microsoft-IIS/8.5
+    status:
+      code: 200
+      message: OK
+version: 1

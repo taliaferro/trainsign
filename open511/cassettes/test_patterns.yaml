@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://api.511.org/transit/patterns?operator_id=SF&line_id=KT&api_key=TEST&format=json
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2559'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Dec 2022 22:12:20 GMT
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
+      RateLimit-Limit:
+      - '60'
+      RateLimit-Remaining:
+      - '57'
+      Server:
+      - Microsoft-IIS/8.5
+    status:
+      code: 200
+      message: OK
+version: 1
