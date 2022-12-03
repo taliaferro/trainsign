@@ -8,22 +8,24 @@ from marshmallow import fields
 
 
 class AvailabilityConditionSchema(BaseSchema):
-    version = fields.Str()
-    id = fields.Str()
-    FromDate = fields.AwareDateTime()
-    ToDate = fields.AwareDateTime()
+    version = fields.Str(data_key="version")
+    id = fields.Str(data_key="id")
+    from_date = fields.AwareDateTime(data_key="FromDate")
+    to_date = fields.AwareDateTime(data_key="ToDate")
 
 
 class ServiceCalendarSchema(BaseSchema):
-    id = fields.Str()
-    FromDate = fields.Date("%Y-%m-%d")
-    ToDate = fields.Date("%Y-%m-%d")
+    id = fields.Str(data_key="id")
+    from_date = fields.Date("%Y-%m-%d", data_key="FromDate")
+    to_date = fields.Date("%Y-%m-%d", data_key="ToDate")
 
 
 class HolidaysContentSchema(BaseSchema):
-    ServiceCalendar = fields.Nested(ServiceCalendarSchema)
-    AvailabilityConditions = fields.List(fields.Nested(AvailabilityConditionSchema))
+    service_calendar = fields.Nested(ServiceCalendarSchema, data_key="ServiceCalendar")
+    availability_conditions = fields.List(
+        fields.Nested(AvailabilityConditionSchema), data_key="AvailabilityConditions"
+    )
 
 
 class HolidaysResponseSchema(BaseSchema):
-    Content = fields.Nested(HolidaysContentSchema)
+    content = fields.Nested(HolidaysContentSchema, data_key="Content")

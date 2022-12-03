@@ -16,7 +16,9 @@ class Open511Client:
         limit_remaining=60,
     ):
         if api_key is None:
-            logging.warn("No API key provided -- continuing under the assumption we're in a test environment.")
+            logging.warning(
+                "No API key provided -- continuing under the assumption we're in a test environment."
+            )
             api_key = "TEST"
         self.url = url
         self.api_key = api_key
@@ -62,10 +64,7 @@ class Open511Client:
         return self._api_get("transit/operators", params=params).json()
 
     def lines(self, operator_id, line_id=None):
-        params = {
-            "operator_id": operator_id,
-            "line_id": line_id
-        }
+        params = {"operator_id": operator_id, "line_id": line_id}
         return self._api_get("transit/lines", params=params).json()
 
     def stops(
