@@ -2,8 +2,10 @@ import logging
 from urllib.parse import urljoin
 
 import requests
+from marshmallow import Schema, fields, post_load
 
 from .holidays import HolidaysResponseSchema
+from .operators import OperatorSchema
 from .stop_monitoring import StopMonitoringResponseSchema
 
 
@@ -61,7 +63,8 @@ class Open511Client:
 
     def operators(self, operator_id=None):
         params = {"operator_id": operator_id}
-        return self._api_get("transit/operators", params=params).json()
+        resp = self._api_get("transit/operators", params=params)
+        return OperatorSchema(many=True, context={"client": self}).load(resp.json())
 
     def lines(self, operator_id, line_id=None):
         params = {"operator_id": operator_id, "line_id": line_id}

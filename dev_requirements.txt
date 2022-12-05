@@ -2,3 +2,4 @@ black
 pytest
 vcrpy
 pytest-vcr
+pytest-asyncio
