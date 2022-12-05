@@ -1,7 +1,6 @@
 from datetime import datetime
 import asyncio
 
-
 async def visit_stream(
     client, agency, stop_code=None, meter=True, rate_limit_overhead=0
 ):
@@ -18,5 +17,5 @@ async def visit_stream(
             )
             time_till_reset = (reset_time - now).seconds
             await asyncio.sleep(
-                time_till_reset / (client.limit_remaining + rate_limit_overhead)
+                time_till_reset / (client.limit_remaining + self.rate_limit_overhead)
             )
