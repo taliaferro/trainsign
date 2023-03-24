@@ -21,16 +21,6 @@ async def test_visit_stream(client):
 
 @pytest.mark.vcr()
 @pytest.mark.asyncio
-async def test_filtertron(client):
-    index = 0
-    async for visit in visit_stream(client=client, agency="SF"):
-        assert visit
-        index += 1
-        if index > 9:
-            break
-
-@pytest.mark.vcr()
-@pytest.mark.asyncio
 async def test_sign_display(client):
     index = 0
     async for visit in visit_stream(client=client, agency="SF"):
