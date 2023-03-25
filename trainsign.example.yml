@@ -1,0 +1,27 @@
+client:
+  api_key: "<REDACTED>"
+
+defaults:
+  display: |-
+    {{results.0.LineRef}} - {{results.0.PublishedLineName | title}}
+    {{now() - results.0}}
+  seconds: 5
+  operator: "SF"
+  stop: "16995"
+
+screens:
+  init:
+    - display: |-
+        SF Train Sign
+        by James Taliaferro
+  loop:
+    - display: |- 
+        for closures and status,
+        visit www.sfmta.com
+    - display: |-
+        {% now 'America/Los_Angeles', '%a, %b %d, %Y' %}
+        {% now 'America/Los_Angeles', '%I:%M %p' %}
+    - line: J
+    - line: KT
+    - line: L
+    - line: N
