@@ -4,6 +4,12 @@ from marshmallow import Schema, fields, post_load
 import yaml
 from dotwiz import DotWiz
 
+class SerialDeviceConfigSchema(Schema):
+    port = fields.String()      # /dev/ttyS0
+    baudrate = fields.Integer() # 9600
+    parity = fields.String()    # PARITY_EVEN
+    bytesize = fields.String()  # EIGHTBITS 
+
 class ScreenConfigSchema(Schema):
     display = fields.String()
     seconds = fields.Float()
@@ -27,15 +33,3 @@ class ConfigSchema(Schema):
     defaults = fields.Nested(ScreenConfigSchema)
     screens = fields.Nested(ScreensListsSchema, required=True)
 
-    def populate_defaults(self, screen, defaults):
-        defaults.update(screen)
-        return defaults
-
-    @post_load
-    def finalize(self, config, **kwargs):
-        defaults = config.get("defaults")
-        if defaults:
-            for key, screens_list in config["screens"].items():
-                for index, screen in enumerate(screens_list):
-                    config["screens"][key][index] = self.populate_defaults(screen, defaults)
-        return DotWiz(config)
