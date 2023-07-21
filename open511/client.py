@@ -3,14 +3,15 @@ from urllib.parse import urljoin
 
 import requests
 
+
 class Open511Client:
     def __init__(
         self,
-        url="https://api.511.org",
-        api_key=None,
-        rate_limit=60,
-        limit_remaining=60,
-    ):
+        url: str = "https://api.511.org",
+        api_key: str = None,
+        rate_limit: int = 60,
+        limit_remaining: int = 60,
+    ) -> None:
         if api_key is None:
             logging.warning(
                 "No API key provided -- continuing under the assumption we're in a test environment."
@@ -25,7 +26,9 @@ class Open511Client:
         self.rate_limit = rate_limit
         self.limit_remaining = limit_remaining
 
-    def _api_get(self, endpoint, params, raise_for_status=True):
+    def _api_get(
+        self, endpoint: str, params: dict, raise_for_status: bool = True
+    ) -> dict:
         params = {k: v for k, v in params.items() if v is not None}
         params.update({"api_key": self.api_key, "format": "json"})
         request_url = urljoin(self.url, endpoint)
@@ -46,32 +49,32 @@ class Open511Client:
             response.encoding = "utf-8-sig"
         return response
 
-    def stop_monitoring(self, agency, stop_code=None):
+    def stop_monitoring(self, agency: str, stop_code: str = None) -> dict:
         params = {"agency": agency, "stop_code": stop_code}
         resp = self._api_get("transit/StopMonitoring", params=params)
         return resp.json()
 
-    def vehicle_monitoring(self, agency, vehicle_id=None):
+    def vehicle_monitoring(self, agency: str, vehicle_id: str = None) -> dict:
         params = {"agency": agency, "vehicle_id": vehicle_id}
         return self._api_get("transit/VehicleMonitoring", params=params).json()
 
-    def operators(self, operator_id=None):
+    def operators(self, operator_id: str = None) -> dict:
         params = {"operator_id": operator_id}
         resp = self._api_get("transit/operators", params=params)
         return resp.json()
 
-    def lines(self, operator_id, line_id=None):
+    def lines(self, operator_id: str, line_id: str = None) -> dict:
         params = {"operator_id": operator_id, "line_id": line_id}
         return self._api_get("transit/lines", params=params).json()
 
     def stops(
         self,
-        operator_id,
+        operator_id: str,
         include_stop_areas=None,
         direction_id=None,
         stop_id=None,
         pattern_id=None,
-    ):
+    ) -> dict:
         params = {
             "operator_id": operator_id,
             "include_stop_areas": include_stop_areas,
@@ -81,11 +84,11 @@ class Open511Client:
         }
         return self._api_get("transit/stops", params=params).json()
 
-    def stop_places(self, operator_id, stop_id=None):
+    def stop_places(self, operator_id: str, stop_id: str = None) -> dict:
         params = {"operator_id": operator_id, "stop_id": stop_id}
         return self._api_get("transit/stopplaces", params=params).json()
 
-    def patterns(self, operator_id, line_id, pattern_id=None):
+    def patterns(self, operator_id: str, line_id: str, pattern_id: str = None) -> dict:
         params = {
             "operator_id": operator_id,
             "line_id": line_id,
@@ -94,8 +97,12 @@ class Open511Client:
         return self._api_get("transit/patterns", params=params).json()
 
     def timetable(
-        self, operator_id, line_id, includespecialservice=None, exceptiondate=None
-    ):
+        self,
+        operator_id: str,
+        line_id: str,
+        includespecialservice: bool = None,
+        exceptiondate: str = None,
+    ) -> dict:
         params = {
             "operator_id": operator_id,
             "line_id": line_id,
@@ -105,7 +112,12 @@ class Open511Client:
         return self._api_get("transit/timetable", params=params).json()
 
     def stop_timetable(
-        self, operatorref, monitoringref, lineref=None, starttime=None, endtime=None
+        self,
+        operatorref: str,
+        monitoringref: str,
+        lineref: str = None,
+        starttime: str = None,
+        endtime: str = None,
     ):
         params = {
             "operatorref": operatorref,
@@ -116,7 +128,7 @@ class Open511Client:
         }
         return self._api_get("transit/stoptimetable", params=params).json()
 
-    def holidays(self, operator_id):
+    def holidays(self, operator_id: str):
         params = {"operator_id": operator_id}
         resp = self._api_get("transit/holidays", params=params)
         return resp.json()
