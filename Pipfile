@@ -12,6 +12,7 @@ packaging = "*"
 pyparsing ="*"
 requests ="*"
 urllib3 = "*" 
+jinja2 = "*"
 
 [dev-packages]
 black = "*"
@@ -19,6 +20,7 @@ pytest = "*"
 vcrpy = "*"
 pytest-vcr = "*"
 pytest-asyncio = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.9"
