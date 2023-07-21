@@ -3,8 +3,8 @@ client:
 
 defaults:
   display: |-
-    {{results.0.LineRef}} - {{results.0.PublishedLineName | title}}
-    {{now() - results.0}}
+    {{results[0].LineRef}} - {{results[0].PublishedLineName | title}}
+    {{now() - results[0]}}
   seconds: 5
   operator: "SF"
   stop: "16995"
