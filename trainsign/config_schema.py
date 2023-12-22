@@ -4,18 +4,19 @@ from marshmallow import Schema, fields, post_load
 import yaml
 from dotwiz import DotWiz
 
+
 class SerialDeviceConfigSchema(Schema):
-    port = fields.String()      # /dev/ttyS0
-    baudrate = fields.Integer() # 9600
-    parity = fields.String()    # PARITY_EVEN
-    bytesize = fields.String()  # EIGHTBITS 
+    port = fields.String()  # /dev/ttyS0
+    baudrate = fields.Integer()  # 9600
+
 
 class ScreenConfigSchema(Schema):
     display = fields.String()
     seconds = fields.Float()
-    operator = fields.String()
     line = fields.String()
     stop = fields.String()
+    direction = fields.String()
+
 
 class ClientConfigSchema(Schema):
     url = fields.URL(default="https://api.511.org")
@@ -24,12 +25,13 @@ class ClientConfigSchema(Schema):
     rate_limit_overhead = fields.Integer(default=0)
     operators = fields.List(fields.String(required=True))
 
+
 class ScreensListsSchema(Schema):
     init = fields.List(fields.Nested(ScreenConfigSchema()))
     loop = fields.List(fields.Nested(ScreenConfigSchema()))
+
 
 class ConfigSchema(Schema):
     client = fields.Nested(ClientConfigSchema, required=True)
     defaults = fields.Nested(ScreenConfigSchema)
     screens = fields.Nested(ScreensListsSchema, required=True)
-

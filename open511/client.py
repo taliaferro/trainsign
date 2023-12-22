@@ -8,6 +8,7 @@ class Open511Client:
     def __init__(
         self,
         url: str = "https://api.511.org",
+        agency: str = None,
         api_key: str = None,
         rate_limit: int = 60,
         limit_remaining: int = 60,
@@ -19,6 +20,7 @@ class Open511Client:
             api_key = "TEST"
         self.url = url
         self.api_key = api_key
+        self.agency = agency
 
         # resets every hour, on the hour
         # these are initial values only -- the actual value is helpfully returned

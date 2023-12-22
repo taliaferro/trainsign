@@ -13,6 +13,7 @@ pyparsing ="*"
 requests ="*"
 urllib3 = "*" 
 jinja2 = "*"
+pyserial = "*"
 
 [dev-packages]
 black = "*"

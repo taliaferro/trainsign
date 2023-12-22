@@ -19,6 +19,7 @@ async def test_visit_stream(client):
         if index > 9:
             break
 
+
 @pytest.mark.vcr()
 @pytest.mark.asyncio
 async def test_sign_display(client):
