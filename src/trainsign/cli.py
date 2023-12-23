@@ -3,12 +3,19 @@ import sys
 
 import fire
 
+from trainsign.config import load_config
+
 
 class TrainSignCLI:
+
+    config: dict
+
     def __init__(self, config_path: os.PathLike = "./trainsign.yml"):
         self._config_path = config_path
+        self.config = load_config(config_path)
 
     def run_sign(self):
+
         raise NotImplementedError()
 
     def systemd(self) -> str:

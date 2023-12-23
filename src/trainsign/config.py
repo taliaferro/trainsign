@@ -1,8 +1,12 @@
-from types import SimpleNamespace
+import os
 
 from marshmallow import Schema, fields, post_load
 import yaml
-from dotwiz import DotWiz
+
+def load_config(path: os.PathLike):
+    with open(path, "r") as fh:
+        raw_config = yaml.safe_load(fh)
+    return ConfigSchema().load(raw_config)
 
 
 class SerialDeviceConfigSchema(Schema):
