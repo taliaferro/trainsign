@@ -19,8 +19,8 @@ class DisplayManager:
 
         self.display_loop_task = asyncio.create_task(self.display_loop(loop_screens))
 
-    async def display(screen):
-        print(screen.message)
+    async def display(self, screen):
+        self.output.write(screen)
         asyncio.sleep(screen.seconds())
 
     async def display_loop(screens):
