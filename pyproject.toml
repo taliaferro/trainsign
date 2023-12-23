@@ -12,9 +12,10 @@ dependencies = [
     "pyyaml",
     "pyserial",
     "jinja2",
+    "fire",
 ]
 dynamic = ["version"]
 
 [project.scripts]
-trainsign = "trainsign:main"
+trainsign = "trainsign.cli:main"
 
