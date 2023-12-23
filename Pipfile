@@ -4,16 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-certifi = "*"
-charset-normalizer = "*"
-idna = "*"
-marshmallow = "*"
-packaging = "*"
-pyparsing ="*"
-requests ="*"
-urllib3 = "*" 
-jinja2 = "*"
-pyserial = "*"
+trainsign = {file = ".", editable = true}
 
 [dev-packages]
 black = "*"
@@ -22,7 +13,7 @@ vcrpy = "*"
 pytest-vcr = "*"
 pytest-asyncio = "*"
 ipython = "*"
+ranger-fm = "*"
 
 [requires]
 python_version = "3.9"
-python_full_version = "3.9.17"

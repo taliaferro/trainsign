@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "trainsign"
+requires-python = ">=3.9"
+dependencies = [
+    "requests",
+    "marshmallow",
+    "pyyaml",
+    "pyserial",
+    "jinja2",
+]
+dynamic = ["version"]
+
+[project.scripts]
+trainsign = "trainsign:main"
+
