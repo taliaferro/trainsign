@@ -6,7 +6,7 @@ from dotwiz import DotWiz
 
 
 class SerialDeviceConfigSchema(Schema):
-    port = fields.String()  # /dev/ttyS0
+    port = fields.String()  # /dev/ttyACM0
     baudrate = fields.Integer()  # 9600
 
 
